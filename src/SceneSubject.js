@@ -14,6 +14,6 @@ export default class scene{
 
     update(time){
         this.cube.rotation.y = this.speed * time;
-        console.log("update("+time+")");
+        //console.log("update("+time+")");
     }
 }
