@@ -43,7 +43,13 @@ class MyThreeJS extends Component{
         return newRenderer;
     }
 
+    createClock(){
+        const clock = new THREE.Clock();
+        return clock;
+    }
+
     init(){
+        let clock = this.createClock();
         let newCam = this.createCamera(this.canvasRef.current);
         newCam.position.z = 500;
         let newScene = this.createScene();
@@ -55,7 +61,8 @@ class MyThreeJS extends Component{
         let newState = {isInitiated:true, renderContext:{
                 camera:newCam,
                 scene:newScene,
-                renderer:newRenderer
+                renderer:newRenderer,
+                clock:clock
             },
             obj: newObj3D
         };
@@ -64,15 +71,17 @@ class MyThreeJS extends Component{
 
     animation(){
         window.requestAnimationFrame( this.animation );
+        //Pega o tempo passado
+        const elapsedTime =  this.state.renderContext.clock.getElapsedTime();
         let updatedObj = Object.assign({}, this.state.obj);
-        updatedObj.mesh.rotation.y = Date.now() * 0.0001;
+        updatedObj.mesh.rotation.y = elapsedTime * 0.1;
         this.state.renderContext.renderer.render(
             this.state.renderContext.scene,
             this.state.renderContext.camera
         );
-        //this.renderer.render( this.scene, this.camera);
+
     }
-    //DO REACT
+
     componentDidMount(){
         console.log("my componentDidMount");
         if(this.state.isInitiated===false){
@@ -86,7 +95,7 @@ class MyThreeJS extends Component{
             );
         }
     }
-    //Render - DO REACT
+
     render(){
         if(this.state.isInitiated!==false){
             this.animation();
