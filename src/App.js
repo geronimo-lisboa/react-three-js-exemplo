@@ -1,33 +1,28 @@
 import React, { Component } from 'react';
 //import threeEntryPoint from  './threeEntryPoint.js' //'./src/threeEntryPoint';
 import * as THREE from 'three'
-// //https://medium.com/@necsoft/three-js-101-hello-world-part-1-443207b1ebe1
+//https://medium.com/@necsoft/three-js-101-hello-world-part-1-443207b1ebe1
+//Versão antiga, tá quase funcionando.
 class MyThreeJS extends Component{
     constructor(props){
         super(props);
         this.canvasRef = React.createRef();
         this.init = this.init.bind(this);
         this.animation = this.animation.bind(this);
-        this.createCamera = this.createCamera.bind(this);
-        this.createScene = this.createScene.bind(this);
+        //this.createCamera = this.createCamera.bind(this);
+        //this.createScene = this.createScene.bind(this);
         this.state = {isInitiated:false, renderContext:undefined, obj:undefined};
-        // this.camera = undefined;
-        // this.scene = undefined;
-        // this.renderer = undefined;
-        // this.geometry = undefined;
-        // this.material = undefined;
-        // this.mesh = undefined;
-        // this.isInitiated = false;
     }
 
-    createCamera(){
+    createCamera(canvas){
         const cam = new THREE.PerspectiveCamera(
-            75, this.canvasRef.current.clientWidth / this.canvasRef.current.clientHeight, 1, 1000 );
+            75, canvas.clientWidth / canvas.clientHeight, 1, 1000 );
         return cam;
     }
 
     createScene(){
-        const scene = new THREE.Scene();
+        let scene = new THREE.Scene();
+        scene.background = new THREE.Color( 0xff0000 );
         return scene;
     }
 
@@ -37,7 +32,7 @@ class MyThreeJS extends Component{
             color: 0xfff999fff,
             wireframe: true,
             wireframelinewidth:8 });
-        let mesh = new THREE.Mesh(this.geometry, this.material);
+        let mesh = new THREE.Mesh(geometry, material);
         const obj = {geometry:geometry, material:material, mesh:mesh};
         return obj;
     }
@@ -49,7 +44,7 @@ class MyThreeJS extends Component{
     }
 
     init(){
-        let newCam = this.createCamera();
+        let newCam = this.createCamera(this.canvasRef.current);
         newCam.position.z = 500;
         let newScene = this.createScene();
         let newObj3D = this.create3dObject();
@@ -89,7 +84,7 @@ class MyThreeJS extends Component{
     render(){
         // if(this.state.isInitiated===true)
         //     this.animation();
-        if(this.state.renderContext!=undefined){
+        if(this.state.renderContext!==undefined){
             this.state.renderContext.renderer.render(
                 this.state.renderContext.scene,
                 this.state.renderContext.camera
@@ -102,6 +97,50 @@ class MyThreeJS extends Component{
         )
     }
 }
+
+// class MyThreeJS extends Component {
+//     constructor(props) {
+//         super(props);
+//         this.canvasRef = React.createRef();
+//     }
+//
+//
+//     createCamera(canvas){
+//         const cam = new THREE.PerspectiveCamera(
+//             75, canvas.clientWidth / canvas.clientHeight, 1, 1000 );
+//         return cam;
+//     }
+//
+//     createScene(){
+//         const scene = new THREE.Scene();
+//         return scene;
+//     }
+//
+//     create3dObject(){
+//         let geometry = new THREE.IcosahedronGeometry(200, 1 );
+//         let material = new THREE.MeshBasicMaterial({
+//             color: 0xfff999fff,
+//             wireframe: true,
+//             wireframelinewidth:8 });
+//         let mesh = new THREE.Mesh(this.geometry, this.material);
+//         const obj = {geometry:geometry, material:material, mesh:mesh};
+//         return obj;
+//     }
+//
+//     createRenderer(canvas){
+//         let newRenderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+//         newRenderer.setSize( canvas.clientWidth, canvas.clientHeight ) ;
+//         return newRenderer;
+//     }
+//
+//     render(){
+//         return(
+//             <div>
+//                 <canvas ref={this.canvasRef}></canvas>
+//             </div>
+//         )
+//     }
+// }
 
 class App extends Component {
     render(){

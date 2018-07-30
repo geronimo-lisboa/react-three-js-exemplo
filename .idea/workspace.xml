@@ -16,8 +16,11 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="56" column="44" lean-forward="true" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
+            <state relative-caret-position="173">
+              <caret line="24" column="24" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="24" />
+              <folding>
+                <element signature="e#3273#3311#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,6 +63,7 @@
       <find>sceneManager</find>
       <find>scene</find>
       <find>createGeometry</find>
+      <find>background</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -92,7 +96,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="width" value="977" />
     <option name="height" value="1038" />
@@ -211,12 +215,12 @@
       <workItem from="1532530294131" duration="7250000" />
       <workItem from="1532631522104" duration="2346000" />
       <workItem from="1532695303717" duration="288000" />
-      <workItem from="1532957516747" duration="11423000" />
+      <workItem from="1532957516747" duration="13192000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21307000" />
+    <option name="totallyTimeSpent" value="23076000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -237,13 +241,13 @@
       <window_info anchor="bottom" id="RNConsole" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49419954" visible="true" weight="0.152349" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49419954" visible="true" weight="0.152349" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.40254238" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3898305" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -269,6 +273,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+          <folding>
+            <element signature="e#3273#3311#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -313,6 +320,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+          <folding>
+            <element signature="e#3273#3311#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -377,6 +387,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="50" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
+          <folding>
+            <element signature="e#3273#3311#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -448,8 +461,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="56" column="44" lean-forward="true" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
+        <state relative-caret-position="173">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="24" />
+          <folding>
+            <element signature="e#3273#3311#0" />
+          </folding>
         </state>
       </provider>
     </entry>
