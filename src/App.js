@@ -64,9 +64,8 @@ class MyThreeJS extends Component{
 
     animation(){
         window.requestAnimationFrame( this.animation );
-
-        //this.mesh.rotation.x = Date.now() * 0.00005;
-        //this.mesh.rotation.y = Date.now() * 0.0001;
+        let updatedObj = Object.assign({}, this.state.obj);
+        updatedObj.mesh.rotation.y = Date.now() * 0.0001;
         this.state.renderContext.renderer.render(
             this.state.renderContext.scene,
             this.state.renderContext.camera
@@ -75,20 +74,22 @@ class MyThreeJS extends Component{
     }
     //DO REACT
     componentDidMount(){
+        console.log("my componentDidMount");
         if(this.state.isInitiated===false){
             this.init();
-            //this.animation();
         }
-    }
-    //Render - DO REACT
-    render(){
-        // if(this.state.isInitiated===true)
-        //     this.animation();
+
         if(this.state.renderContext!==undefined){
             this.state.renderContext.renderer.render(
                 this.state.renderContext.scene,
                 this.state.renderContext.camera
             );
+        }
+    }
+    //Render - DO REACT
+    render(){
+        if(this.state.isInitiated!==false){
+            this.animation();
         }
         return(
             <div>
